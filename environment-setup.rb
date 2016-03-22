@@ -21,7 +21,7 @@ end
 1.upto(num_webservers) do |i|
   machine "web#{i}.#{domain}" do
     recipe 'apt::default' # Update local apt database
-    recipe 'nginx'        # running on port 80, using Go on port 3000
+    recipe 'apt-nginx'        # running on port 80, using Go on port 3000
     chef_environment chef_env
       machine_options :docker_options => {
         :base_image => {
@@ -31,10 +31,18 @@ end
         },
         :command => 'service nginx start'
       }
+      
+  end
+  
+  machine_file '/etc/nginx/nginx.conf' do
+        machine "web#{i}.#{domain}"
+        local_path 'nginx.conf'
+        action :upload
   end
 end
 
 # Launch Application servers in parallel
+
 machine_batch do
   1.upto(num_appservers) do |i|
     machine "app#{i}.#{domain}" do

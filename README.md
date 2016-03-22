@@ -21,11 +21,15 @@ mkdir -p ~/code/chef-docker/cookbooks <br>
 cd ~/code/chef-docker/cookbooks && git init <br>
 echo '# Cookbooks repository for chef-local' > README.md <br>
 git add *; git commit -am 'Added README' <br>
- 
+
+knife cookbook site download 7-zip --force<br>
+mv 7-zip-1.0.2.tar.gz 7-zip.tar.gz <br><br>
+
 knife cookbook site install apt -z <br>
 knife cookbook site install haproxy -z <br>
-knife cookbook site install nginx -z <br>
+knife cookbook site install apt-nginx -z <br>
 knife cookbook site install golang -z <br>
+
 
 
 ## Lets go!
