@@ -25,7 +25,7 @@ git add *; git commit -am 'Added README' <br>
 knife cookbook site install apt -z <br>
 knife cookbook site install haproxy -z <br>
 knife cookbook site install nginx -z <br>
-knife cookbook site install go -z <br>
+knife cookbook site install golang -z <br>
 
 
 ## Lets go!
@@ -34,8 +34,8 @@ knife cookbook site install go -z <br>
 
 Point your browser to http://localhost:8080 and you should see:
 
-Hi there, I'm served from app1.demoapp.local
-and
+Hi there, I'm served from app1.demoapp.local<br>
+and<br>
 Hi there, I'm served from app2.demoapp.local
-
+<br>
 In a round-robin fashion.
