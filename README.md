@@ -15,16 +15,17 @@ Install chef-provisioning-docker library NOTE: Requires latest beta version to c
 
 ### Cookbooks Required
 
-echo "cookbook_path = '~/code/chef-docker/cookbooks'" >> ~/code/chef-docker/.chef/knife.rb
-mkdir -p ~/code/chef-docker/cookbooks
-cd ~/code/chef-docker/cookbooks && git init
-echo '# Cookbooks repository for chef-local' > README.md
-git add *; git commit -am 'Added README'
+echo "cookbook_path = '~/code/chef-docker/cookbooks'" >> ~/code/chef-docker/.chef/knife.rb <br>
+
+mkdir -p ~/code/chef-docker/cookbooks <br>
+cd ~/code/chef-docker/cookbooks && git init <br>
+echo '# Cookbooks repository for chef-local' > README.md <br>
+git add *; git commit -am 'Added README' <br>
  
-knife cookbook site install apt -z
-knife cookbook site install haproxy -z
-knife cookbook site install nginx -z
-knife cookbook site install go -z
+knife cookbook site install apt -z <br>
+knife cookbook site install haproxy -z <br>
+knife cookbook site install nginx -z <br>
+knife cookbook site install go -z <br>
 
 
 ## Lets go!
